@@ -1,0 +1,191 @@
+header {
+	background: rgb(0,0,0);
+	background: -moz-radial-gradient(circle, rgba(0,0,0,1) 18%, rgba(18,18,18,1) 50%, rgba(38,38,38,1) 82%);
+	background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 18%, rgba(18,18,18,1) 50%, rgba(38,38,38,1) 82%);
+	background: radial-gradient(circle, rgba(0,0,0,1) 18%, rgba(18,18,18,1) 50%, rgba(38,38,38,1) 82%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#262626",GradientType=1);
+	border-radius: 100px;
+}
+.headpic {
+	display: inline-block;
+	width: 16%;
+}
+.headlogol {
+	display: inline-block;
+	width: 8%;															/* 8% = logo1 | 15% = logo4*/
+}
+.headlogor {
+	display: inline-block;
+	width: 8%;															/* 8% = logo1 | 15% = logo4*/
+}
+
+.pay {
+	display: inline-block;
+	width: 200px;
+}
+body{
+	background: rgb(0,0,0);
+	background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,38,38,1) 33%, rgba(34,34,34,1) 50%, rgba(38,38,38,1) 66%, rgba(0,0,0,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,38,38,1) 33%, rgba(34,34,34,1) 50%, rgba(38,38,38,1) 66%, rgba(0,0,0,1) 100%);
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,38,38,1) 33%, rgba(34,34,34,1) 50%, rgba(38,38,38,1) 66%, rgba(0,0,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+.heading {
+	text-align: center;
+	font-size: 42px;
+	font-weight: bold;
+	color: white;
+	font-family: calibri;
+}
+.name {
+	text-align: center;
+	font-size: 60px;
+	font-weight: bold;
+	/*font-style: italic;*/
+	font-family: 'Kunstler Script', 'Edwardian Script ITC', 'Monotype Corsiva';
+	color: white;
+}
+
+
+.score {
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	font-family: calibri;
+}
+.score h2 {
+	font-size: 36px;
+}
+.score p {
+	text-align: center;
+	font-size: 28px;
+}
+.pScore {
+	position: absolute;
+	left: 20%;
+}
+.cScore {
+	position: absolute;
+	right: 20%;
+}
+.goB {
+	transition: opacity 0.5s ease;
+	color: #ffffff;
+	font-family: calibri;
+	height: 30px;
+}
+.button {
+	font-size: 32px;
+	background: transparent;
+	display: inline-block;
+	color: #ffffff;
+	font-weight: bold;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0px 10px 5px 0px rgba(255, 0, 0, 1);
+}
+button:hover {
+	background-color: #fcf7f7;
+	color: #211c1c;
+	border-color: #000000;
+	cursor: pointer;
+}
+button:active {
+	background-color: #000000;
+	color: #ffffff;
+	border-color: #ffffff;
+	transform: translateY(15px);
+	transition: 0.1s;
+}
+.pHand {
+	transform: rotateY(180deg) /*rotateZ(60deg)*/;
+	width: 200px;
+}
+.cHand {
+	/* transform: rotateZ(60deg); */
+	width: 200px;
+}
+.match{
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease 0.5s;
+	text-align: center;
+	color: #ffffff;
+	font-size: 24px;
+	margin: 0 auto;
+	font-family: calibri;
+}
+div.fadeOut {
+	opacity: 0;
+	pointer-events: none;
+}
+div.fadeIn {
+	opacity: 1;
+	pointer-events: all;
+}
+.hands {
+	text-align: center;
+}
+.button {
+	text-align: center;
+	font-size: 32px;
+	display: inline-block;
+	color: #ffffff;
+	font-weight: bold;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+@keyframes shakePlayer {
+	0% {
+		transform: rotateY(180deg) translateY(0px);
+	}
+	17% {
+		transform: rotateY(180deg) rotateZ(60deg) translateY(-100px);
+	}
+	33% {
+		transform: rotateY(180deg) translateY(0px);
+	}
+	50% {
+		transform: rotateY(180deg) rotateZ(60deg) translateY(-100px);
+	}
+	67% {
+		transform: rotateY(180deg) translateY(0px);
+	}
+	83% {
+		transform: rotateY(180deg) rotateZ(60deg) translateY(-100px);
+	}
+	100% {
+		transform: rotateY(180deg) translateY(0px);
+	}
+}
+
+@keyframes shakeComputer {
+	0% {
+		transform: translateY(0px);
+	}
+	17% {
+		transform: rotateZ(60deg) translateY(-100px);
+	}
+	33% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: rotateZ(60deg) translateY(-100px);
+	}
+	67% {
+		transform: translateY(0px);
+	}
+	83% {
+		transform: rotateZ(60deg) translateY(-100px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
