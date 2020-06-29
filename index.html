@@ -30,10 +30,40 @@
 		</div>
 	</div>
 
-	<div style="text-align: center;">
+	<div style="text-align: center;" class="start">
 		<div class="goB">
 			<button class="button" id="idgo">Let's Go!!!</button>
-			<h2>WIN = 3 pt&emsp;&emsp;TIE = 1 pt&emsp;&emsp;LOSE = 0 pt</h2>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="select">
+			<select id="win" style="width: 150px;" onmouseover="dropw()"
+				onmouseout="this.size=1;">
+				<option value="0">WIN pts</option>
+				<option value="1">3</option>
+				<option value="2">2</option>
+				<option value="3">1</option>
+				<option value="4">0</option>
+			</select> <select id="tie" style="width: 150px; margin: 0px 10px 0px 10px;"
+				onmouseover="dropt()" onmouseout="this.size=1;">
+				<option value="0">TIE pts</option>
+				<option value="1">2</option>
+				<option value="2">1</option>
+				<option value="3">0</option>
+				<option value="4">-1</option>
+				<option value="5">-2</option>
+			</select> <select id="lose" style="width: 150px;" onmouseover="dropl()"
+				onmouseout="this.size=1;">
+				<option value="0">LOSE pts</option>
+				<option value="1">2</option>
+				<option value="2">1</option>
+				<option value="3">0</option>
+				<option value="4">-1</option>
+				<option value="5">-2</option>
+				<option value="6">-3</option>
+			</select>
 		</div>
 	</div>
 
@@ -53,6 +83,7 @@
 	<br>
 	<br>
 	<br>
+
 
 	<div style="text-align: left; display: inline-block;">
 		<iframe

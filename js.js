@@ -1,16 +1,41 @@
 const game = () => {
-	let pScore = 0;
-	let cScore = 0;
+	
+	var pScore = 0;
+	var cScore = 0;
+	
 	
 	//Start the Game
 	const startGame = () => {
 		const playBtn = document.querySelector(".goB button");
-		const introScreen = document.querySelector(".goB");
+		const introScreen = document.querySelector(".start");
 		const match = document.querySelector(".match");
 		playBtn.addEventListener("click", () => {
 			introScreen.classList.add("fadeOut");
 			match.classList.add("fadeIn");
+			var wi = document.getElementById("win");
+			w = wi.options[wi.selectedIndex].text;
+			var ti = document.getElementById("tie");
+			t = ti.options[ti.selectedIndex].text;
+			var li = document.getElementById("lose");
+			l = li.options[li.selectedIndex].text;
+			matchno = 0;
+			
+			var wi = document.getElementById("win").value;
+			var ti = document.getElementById("tie").value;
+			var li = document.getElementById("lose").value;
+	
+			if (wi == 0) {
+				w = 3;
+			}
+			if (ti == 0) {
+				t = 1;
+			}
+			if (li == 0) {
+				l = 0;
+			}
+			console.log(w + " " + t + " " + l);
 		});
+		
 	};
 	//Play Match
 	const playMatch = () => {
@@ -57,25 +82,28 @@ const game = () => {
 	
 	const compareHands = (playerChoice, computerChoice) => {
 		//Update Text
+		matchno++;
 		const result = document.querySelector(".result");
 		//Checking for a tie
 		if (playerChoice === computerChoice) {
-			result.textContent = "TIE";
-			pScore++;
-			cScore++;
+			result.textContent = matchno + ". TIE";
+			pScore = parseInt(pScore) + parseInt(t);
+			cScore = parseInt(cScore) + parseInt(t);
 			updateScore();
 			return;
 		}
 		//Check for Rock
 		else if (playerChoice === "Rock") {
 			if (computerChoice === "Paper") {
-				result.textContent = "LOSE";
-				cScore += 3;
+				result.textContent = matchno + ". LOSE";
+				cScore = parseInt(cScore) + parseInt(w);
+				pScore = parseInt(pScore) + parseInt(l);
 				updateScore();
 				return;
 			} else {
-				result.textContent = "WIN";
-				pScore += 3;
+				result.textContent = matchno + ". WIN";
+				pScore = parseInt(pScore) + parseInt(w);
+				cScore = parseInt(cScore) + parseInt(l);
 				updateScore();
 				return;
 			}
@@ -83,13 +111,15 @@ const game = () => {
 		//Check for Paper
 		else if (playerChoice === "Paper") {
 			if (computerChoice === "Scissors") {
-				result.textContent = "LOSE";
-				cScore += 3;
+				result.textContent = matchno + ". LOSE";
+				cScore = parseInt(cScore) + parseInt(w);
+				pScore = parseInt(pScore) + parseInt(l);
 				updateScore();
 				return;
 			} else {
-				result.textContent = "WIN";
-				pScore += 3;
+				result.textContent = matchno + ". WIN";
+				pScore = parseInt(pScore) + parseInt(w);
+				cScore = parseInt(cScore) + parseInt(l);
 				updateScore();
 				return;
 			}
@@ -97,13 +127,15 @@ const game = () => {
 		//Check for Scissors
 		else if (playerChoice === "Scissors") {
 			if (computerChoice === "Rock") {
-				result.textContent = "LOSE";
-				cScore += 3;
+				result.textContent = matchno + ". LOSE";
+				cScore = parseInt(cScore) + parseInt(w);
+				pScore = parseInt(pScore) + parseInt(l);
 				updateScore();
 				return;
 			} else {
-				result.textContent = "WIN";
-				pScore += 3;
+				result.textContent = matchno + ". WIN";
+				pScore = parseInt(pScore) + parseInt(w);
+				cScore = parseInt(cScore) + parseInt(l);
 				updateScore();
 				return;
 			}
@@ -117,3 +149,16 @@ const game = () => {
 
 //start the game function
 game();
+
+function dropw() {
+	var x = document.getElementById("win").options.length;
+	document.getElementById("win").size = x;
+}
+function dropt() {
+	var x = document.getElementById("tie").options.length;
+	document.getElementById("tie").size = x;
+}
+function dropl() {
+	var x = document.getElementById("lose").options.length;
+	document.getElementById("lose").size = x;
+}

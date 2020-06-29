@@ -68,11 +68,25 @@ body{
 	position: absolute;
 	right: 20%;
 }
-.goB {
+.start {
 	transition: opacity 0.5s ease;
+}
+.goB {
 	color: #ffffff;
 	font-family: calibri;
 	height: 30px;
+}
+#win, #tie, #lose {
+	background-color: #f73e3e;
+	color: #000000;
+	font-family: calibri;
+	font-size: 24px;
+	text-align: center;
+	vertical-align: top;
+}
+select option:hover {
+	color:#ffffff;
+	background-color: #c72c2c;
 }
 .button {
 	font-size: 32px;
